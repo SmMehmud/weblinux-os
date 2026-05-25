@@ -1,0 +1,63 @@
+/* =============================================
+   base.css — CSS Variables, Reset, Body, Boot
+   ============================================= */
+
+:root {
+  --bg: #1a1a2e;
+  --fg: #eaeaea;
+  --accent: #0f3460;
+  --highlight: #e94560;
+  --surface: #16213e;
+  --border: #0f3460;
+  --taskbar: #0a0a14;
+  --window: #16213e;
+  --title: #0f3460;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  color: var(--fg);
+}
+
+/* --- Boot Screen --- */
+#boot {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+#boot-logo {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#boot-bar {
+  width: 300px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#boot-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--highlight);
+  transition: width 0.3s;
+}

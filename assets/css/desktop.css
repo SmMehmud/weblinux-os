@@ -1,0 +1,248 @@
+/* =============================================
+   desktop.css — Desktop, Icons, Taskbar, Start Menu
+   ============================================= */
+
+/* --- Desktop --- */
+#desktop {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  overflow: hidden;
+}
+
+#desktop-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  gap: 10px;
+  padding: 15px;
+  position: absolute;
+  inset: 0;
+}
+
+.d-icon {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.d-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.d-icon .ic {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.d-icon .nm {
+  font-size: 11px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  word-break: break-word;
+}
+
+/* --- Taskbar --- */
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: var(--taskbar);
+  border-top: 1px solid #222;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  z-index: 9999;
+  gap: 4px;
+}
+
+#start-btn {
+  padding: 0 16px;
+  height: 36px;
+  background: var(--highlight);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#start-btn:hover {
+  opacity: 0.9;
+}
+
+#taskbar-apps {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.tb-app {
+  height: 36px;
+  padding: 0 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 160px;
+  min-width: 40px;
+}
+
+.tb-app.active {
+  background: var(--accent);
+  border-color: var(--highlight);
+}
+
+.tb-app:hover {
+  background: var(--accent);
+}
+
+#clock {
+  margin-left: auto;
+  padding: 0 12px;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* --- System Tray --- */
+#tray {
+  display: flex;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+.tray-ic {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tray-ic:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Start Menu --- */
+#start-menu {
+  position: fixed;
+  bottom: 48px;
+  left: 8px;
+  width: 600px;
+  height: 500px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#start-menu.open {
+  display: flex;
+}
+
+#sm-search {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+#sm-search input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  border-radius: 6px;
+  outline: none;
+}
+
+#sm-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+#sm-cats {
+  width: 140px;
+  border-right: 1px solid var(--border);
+  padding: 8px;
+}
+
+.sm-cat {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.sm-cat:hover,
+.sm-cat.active {
+  background: var(--accent);
+}
+
+#sm-apps {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  align-content: start;
+}
+
+.sm-app {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.sm-app:hover {
+  background: var(--accent);
+}
+
+.sm-app .ic {
+  font-size: 20px;
+}
+
+#sm-user {
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+}
+
+#u-av {
+  width: 32px;
+  height: 32px;
+  background: var(--highlight);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}

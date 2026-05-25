@@ -1,0 +1,135 @@
+/* =============================================
+   windows.css — Window System, Context Menu
+   ============================================= */
+
+/* --- Window --- */
+.window {
+  position: absolute;
+  background: var(--window);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 200px;
+  min-height: 120px;
+}
+
+.window.max {
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0;
+}
+
+/* --- Title Bar --- */
+.win-title {
+  height: 36px;
+  background: var(--title);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 8px;
+  cursor: default;
+  user-select: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.win-title .w-ic {
+  font-size: 16px;
+}
+
+.win-title .w-ti {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.w-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-min { background: #f1c40f; }
+.w-max { background: #2ecc71; }
+.w-clo { background: #e74c3c; color: #fff; }
+
+/* --- Window Body --- */
+.win-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  position: relative;
+}
+
+.win-body::-webkit-scrollbar { width: 8px; }
+.win-body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* --- Resize Handle --- */
+.rz {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+}
+
+.rz.se {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+/* --- Context Menu --- */
+#ctx-menu {
+  position: fixed;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 0;
+  z-index: 99999;
+  display: none;
+  min-width: 160px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.ctx-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctx-item:hover {
+  background: var(--accent);
+}
+
+.ctx-hr {
+  border-top: 1px solid var(--border);
+  margin: 4px 0;
+}
+
+.app-content {
+  width: 100%;
+  height: 100%;
+}
