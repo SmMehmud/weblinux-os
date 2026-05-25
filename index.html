@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebLinux OS</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/desktop.css">
+  <link rel="stylesheet" href="assets/css/windows.css">
+  <link rel="stylesheet" href="assets/css/apps.css">
+</head>
+<body>
+
+  <!-- Boot Screen -->
+  <div id="boot">
+    <div id="boot-logo">🐧 WebLinux</div>
+    <div id="boot-bar"><div id="boot-fill"></div></div>
+    <div style="margin-top:12px;font-size:13px;color:#888" id="boot-txt">Loading kernel...</div>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop">
+    <div id="desktop-icons"></div>
+  </div>
+
+  <!-- Taskbar -->
+  <div id="taskbar">
+    <button id="start-btn">🐧 Start</button>
+    <div id="taskbar-apps"></div>
+    <div id="tray">
+      <div class="tray-ic">📶</div>
+      <div class="tray-ic">🔊</div>
+      <div class="tray-ic">🔋</div>
+    </div>
+    <div id="clock">00:00</div>
+  </div>
+
+  <!-- Start Menu -->
+  <div id="start-menu">
+    <div id="sm-search">
+      <input type="text" placeholder="Search apps..." id="sm-inp">
+    </div>
+    <div id="sm-body">
+      <div id="sm-cats"></div>
+      <div id="sm-apps"></div>
+    </div>
+    <div id="sm-user">
+      <div id="u-av">U</div>
+      <div>
+        <div style="font-weight:600;font-size:13px">User</div>
+        <div style="font-size:11px;color:#aaa">Local Account</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context Menu -->
+  <div id="ctx-menu"></div>
+
+  <!-- JS: Core (order matters) -->
+  <script src="assets/js/core/helpers.js"></script>
+  <script src="assets/js/core/os.js"></script>
+  <script src="assets/js/core/vfs.js"></script>
+  <script src="assets/js/core/window.js"></script>
+
+  <!-- JS: Apps -->
+  <script src="assets/js/apps/system.js"></script>
+  <script src="assets/js/apps/accessories.js"></script>
+  <script src="assets/js/apps/games.js"></script>
+  <script src="assets/js/apps/graphics.js"></script>
+  <script src="assets/js/apps/internet.js"></script>
+  <script src="assets/js/apps/utilities.js"></script>
+
+  <!-- JS: Boot -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

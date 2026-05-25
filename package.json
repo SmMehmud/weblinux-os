@@ -1,0 +1,18 @@
+{
+  "name": "weblinux-os",
+  "version": "1.0.0",
+  "description": "A fully functional web-based operating system with 70+ apps",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "build": "echo 'Static site - no build step needed'",
+    "lint": "echo 'Add eslint here if needed'"
+  },
+  "keywords": ["web-os", "browser-os", "linux", "desktop"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}
